@@ -11,7 +11,7 @@ import { PedidoFormComponent } from './pedido/pedido-form/pedido-form.component'
 //http://localhost:4200/clientes/incluir -> Novo Cliente
 //http://localhost:4200/clientes/ -> Editar Cliente
 
-const routes: Routes = [{
+export const routes: Routes = [{
   path: 'clientes',
   children: [
     {path: '', component: ClienteListComponent},

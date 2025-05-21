@@ -2,7 +2,7 @@
 <div class="row justify-content-end">
     <div class="col-2">
         <div class="card mb-2">
-            <button type="button" class="btn btn-primary">Incluir</button>
+            <a type="button" class="btn btn-primary" [routerLink]="['Incluir']">Incluir</a>
         </div>
     </div>
 </div>
@@ -25,36 +25,18 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Romildo Jr.</td>
-                            <td>81 9 9470 1058</td>
-                            <td>Jaboatão dos Guararapes</td>
+
+                        <tr *ngFor="let cliente of clientes">
+                            <th scope="row">{{cliente.id}}</th>
+                            <td>{{cliente.nome}}</td>
+                            <td>{{cliente.telefone}}</td>
+                            <td>{{cliente.endereco}}</td>
                             <td class="text-center align-middle">
-                                <button type="button" class="btn btn-primary mr-2">Editar</button>
-                                <button type="button" class="btn btn-danger">Excluir</button>
+                                <a type="button" class="btn btn-primary mr-2"[routerLink]="[cliente.id]">Editar</a>
+                                <button type="button" class="btn btn-danger" (click)="excluir(cliente)">Excluir</button>
                             </td>
                         </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Romildo Jr.</td>
-                            <td>81 9 9470 1058</td>
-                            <td>Jaboatão dos Guararapes</td>
-                            <td class="text-center align-middle">
-                                <button type="button" class="btn btn-primary mr-2">Editar</button>
-                                <button type="button" class="btn btn-danger">Excluir</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Romildo Jr.</td>
-                            <td>81 9 9470 1058</td>
-                            <td>Jaboatão dos Guararapes</td>
-                            <td class="text-center align-middle">
-                                <button type="button" class="btn btn-primary mr-2">Editar</button>
-                                <button type="button" class="btn btn-danger">Excluir</button>
-                            </td>
-                        </tr>
+                        
                     </tbody>
                 </table>
             </div>

@@ -1,8 +1,7 @@
-
 <div class="row justify-content-end">
     <div class="col-2">
         <div class="card mb-2">
-            <button type="button" class="btn btn-primary">Incluir</button>
+            <button type="button" class="btn btn-primary" [routerLink]="['incluir']">Incluir</button>
         </div>
     </div>
 </div>
@@ -26,43 +25,21 @@
                     </thead>
                     <tbody>
 
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Caneta Esferográfica BIC</td>
-                            <td class="text-center">UN</td>
-                            <td>R$ 2,50</td>
+                        <tr *ngFor="let produto of produtos">
+                            <th scope="row" class="align-middle">{{produto.id}}</th>
+                            <td class="align-middle">{{produto.descricao}}</td>
+                            <td class="align-middle">{{produto.unidade}}</td>
+                            <td class="align-middle">{{produto.preco | currency: 'BRL'}}</td>
                             <td class="text-center align-middle">
-                                <button type="button" class="btn btn-primary mr-2">Editar</button>
-                                <button type="button" class="btn btn-danger">Excluir</button>
+                                <button type="button" class="btn btn-primary mr-2"
+                                    [routerLink]="[produto.id]">Editar</button>
+                                <button type="button" class="btn btn-danger" (click)="excluir(produto)">Excluir</button>
                             </td>
                         </tr>
-                        
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Caneta Esferográfica BIC</td>
-                            <td class="text-center">UN</td>
-                            <td>R$ 2,50</td>
-                            <td class="text-center align-middle">
-                                <button type="button" class="btn btn-primary mr-2">Editar</button>
-                                <button type="button" class="btn btn-danger">Excluir</button>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Caneta Esferográfica BIC</td>
-                            <td class="text-center">UN</td>
-                            <td>R$ 2,50</td>
-                            <td class="text-center align-middle">
-                                <button type="button" class="btn btn-primary mr-2">Editar</button>
-                                <button type="button" class="btn btn-danger">Excluir</button>
-                            </td>
-                        </tr>
-                        
+
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
 </div>
-
