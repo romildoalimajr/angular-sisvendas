@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PedidoFormComponent } from './pedido-form/pedido-form.component';
 import { PedidoListComponent } from './pedido-list/pedido-list.component';
-
-
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -11,7 +11,9 @@ import { PedidoListComponent } from './pedido-list/pedido-list.component';
     PedidoListComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    RouterModule
   ]
 })
 export class PedidoModule { }

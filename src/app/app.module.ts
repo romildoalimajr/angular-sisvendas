@@ -10,8 +10,15 @@ import { ClienteModule } from './cliente/cliente.module';
 import { ProdutoModule } from './produto/produto.module';
 import { PedidoModule } from './pedido/pedido.module';
 
+import { registerLocaleData } from '@angular/common';
+import ptBr from '@angular/common/locales/pt';
+
+
+registerLocaleData(ptBr);
+
 @NgModule({
   declarations: [
+    
     
   ],
   imports: [

@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import $ from 'jquery';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
+  imports: [RouterLink, RouterOutlet],
 })
 export class AppComponent implements OnInit {
   title = 'angular-sisvendas';
@@ -18,7 +19,6 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.configurarMenu();
   }
-
 
   private configurarMenu() {
     this.fullHeight();
